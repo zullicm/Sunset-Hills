@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from "react";
-import Logo from "../Images/sunset.jpg"
+import Logo from "../Images/low CC.jpg"
 
 function Home(){
   const [courses, setCourses] = useState([])
 
 
   useEffect(() => {
-    fetch("http://localhost:3000")
+    fetch("http://localhost:3000/courses")
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => setCourses(data))
   }, [])
 
-
+console.log(courses)
 
   return(
     <div className="homepage">
-      <h1>HomePage</h1>
       <img className="SH-Logo"src={Logo}/> 
+      <div>
+        <h4>Pick a course</h4>
+      {courses.map(course => <div className="course-name"><h5>{course.name}</h5><img className="course-home-img" src={course.image}/></div>)}
+      </div>
     </div>
   )
 }

@@ -2,9 +2,9 @@
   text-align: center;
 }
 
-/* body{
-  background-image: url(/home/zullicm/development/code/phase-5/golf/client/src/Images/HomeImage.jpg);
-} */
+body{
+  background-image: url(./Images/HomeBG.jpg);
+}
 
 .App-logo {
   height: 40vmin;
@@ -67,17 +67,64 @@
   margin: auto;
 }
 
+.homepage{
+  background-color: rgba(255, 255, 255, 0.705);
+  margin: auto;
+  width: 75vw;
+  margin-top: 5vh;
+  padding: 1%;
+  border-radius: 50px;
+  height: 85vh;
+}
+
 .SH-Logo{
-  height: 300px;
-  width: 300px;
-  border-radius: 160px;
+  height: 200px;
+  width: 200px;
+  border-radius: 15px;
+  margin: 2%;
+  border-color: black;
+  border-style: groove;
 }
 
 .nav-logo{
   height: 5%;
   width: 2.45vw;
-  border-radius: 160px;
+  border-radius: 0px;
   margin-top: 1vh;
   float: left;
   margin-right: 15px;
+  border-color: black;
+  border-style: groove;
+  border-width: 1px;
+}
+
+.course-home-img{
+  height: 300px;
+  width: 300px;
+  border-radius: 160px;
+  margin: 2%;
+  border-color: black;
+  border-style: groove;
+  background-color: white;
+  filter: brightness(20%);
+
+}
+
+.course-home-img:hover {
+  filter: brightness(100%);
+}
+
+.course-name{
+    float: left;
+    width: 33%;
+}
+
+.course-home{
+  width: 33vw;
+}
+
+.course-image-container{
+  position: relative;
+  text-align: center;
+  color: white;
 }
