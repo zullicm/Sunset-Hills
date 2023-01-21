@@ -68,12 +68,12 @@ body{
 }
 
 .homepage{
-  background-color: rgba(255, 255, 255, 0.705);
+  background-color: rgba(255, 255, 255, 0.700);
   margin: auto;
   width: 75vw;
   margin-top: 5vh;
   padding: 1%;
-  border-radius: 50px;
+  border-radius: 10px;
   height: 85vh;
 }
 
@@ -127,4 +127,32 @@ body{
   position: relative;
   text-align: center;
   color: white;
+}
+
+.course-page{
+  width: 75vw;
+  height: 85vh;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.700);
+  border-radius: 10px;
+  margin-top: 4vh;
+}
+
+.course-page-img{
+  background-color: white;
+  transform: rotate(90deg);
+  height: 50vh;
+  width: 33vw;
+  border: black;
+  border-radius: 15px;
+  border-style: inset;
+  float: left;
+  margin-top: 11%;
+}
+
+.course-info{
+  text-align: left;
+  width: 55%;
+  float: right;
+  padding: 2%;
 }

@@ -4,7 +4,7 @@ puts "Seeding Courses..."
 #Course.create(name: "", difficulty: "", image: "", about: "")
 
 #Course A - GroundHog
-Course.create(name: "GroundHog", difficulty: "Beginner", image: "https://mygolfdays.com/wp-content/uploads/2021/04/stMichaels-layout.jpg", about: "Welcoming to players of all skills, our GroundHog course is the least challening course we have. Although the course is a bit longer it encourages players to hit the ball straight as there arent nearly as many dog legs. With only a small amount of hasards this course is best for suited for beginners to the game of golf.")
+Course.create(name: "GroundHog", difficulty: "Beginner", image: "https://www.colinaparkgolf.com/wp-content/uploads/sites/7014/2018/05/course-2.jpg", about: "Welcoming to players of all skills, our GroundHog course is the least challening course we have. Although the course is a bit longer it encourages players to hit the ball straight as there arent nearly as many dog legs. With only a small amount of hasards this course is best for suited for beginners to the game of golf.")
 
 #Course B - Snake
 Course.create(name: "Snake", difficulty: "Experienced", image: "https://www.wellsgolfclub.co.uk/images/resources/wells/courseMap3.png", about: "Our snake course isn't something to scoff at! With long drives and a few extra hazards this course will have you testing your golf game. This course is for the more expirenced players looking step away from the 'easier' courses. Now with a few more dogs legs than the GroundHog course, new players may be finding themselves in the 'ruff' more often!")
