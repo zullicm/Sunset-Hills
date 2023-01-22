@@ -16,7 +16,7 @@ function Home(){
   }
 
   useEffect(() => {
-    fetch("/courses")
+    fetch("/api/courses")
     .then(res => res.json())
     .then(data => setCourses(data))
   }, [])
