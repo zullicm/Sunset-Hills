@@ -156,3 +156,27 @@ body{
   float: right;
   padding: 2%;
 }
+
+.calender-container{
+  width: 40%;
+  height: 30%;
+  margin-right: 9.7vw;
+  float: right;
+}
+
+.time-picker{
+  width: 9%;
+  float: right;
+  margin-right: 17%;
+  margin-top: 0%;
+}
+
+.user-calender{
+  background-color: white;
+  margin: auto;
+}
+
+.calen{
+  margin: auto;
+
+}
