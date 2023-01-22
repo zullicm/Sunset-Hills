@@ -21,7 +21,7 @@ function Home(){
     .then(data => setCourses(data))
   }, [])
   
-  
+  console.log(courses)
 
 
   return(
