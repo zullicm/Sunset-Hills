@@ -4,4 +4,5 @@ class CoursesController < ApplicationController
       courses = Course.all
       render json: courses
     end
+    
 end

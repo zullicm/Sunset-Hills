@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Problems with server?
+
+pg_lsclusters
+sudo service postgresql restart
+pg_lsclusters
+
+Server pushing, /api/
