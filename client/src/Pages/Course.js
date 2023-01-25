@@ -9,7 +9,8 @@ function Course(){
   const {user, setUser} = useContext(UserContext)
   const [date, setDate] = useState(null)
   const [time, setTime] = useState(null)
-  const [playerNum, setPlayerNum] = useState(1)
+  const [playerNum, setPlayerNum] = useState(null)
+  
   function changeDate(data){
     setDate(JSON.stringify(data))
   }
@@ -72,23 +73,26 @@ function Course(){
       </div>
       <img className="course-page-img z-depth-5" src={course.image} />
       <div className="reservation-form">
-        <select className="browser-default" onChange={(e) => setDateTime(e)}>
+        <select className="browser-default dropdowns" onChange={(e) => setDateTime(e)}>
           <option value="none">Select a Time</option>
           {times.map(time => <option key={time} value={time}>{time}</option>)}
         </select>
         <br/>
-        <select className="browser-default" onChange={(e) => setPlayers(e)}>
+        <select className="browser-default dropdowns" onChange={(e) => setPlayers(e)}>
           <option value="none">Select #of Players</option>
           {players.map(player => <option key={player} value={player}>{player}</option>)}
         </select>
         <br/>
+        <div className="reserve-info">
+          <p><b><u>Reservation Info:</u></b></p>
+          {date ? <p>{date.slice(1, 11)} @ {time ? time : "Pick a time"}</p> : <p>Pick a date and time...</p>}
+          {playerNum ? <p>For {playerNum} Golfer{playerNum > 1 ? "s" : null}</p>: <p>Please pick a number of golfers</p>}
+        </div>
         <button className="reserve-button"onClick={submitReservation}>Make Reservation</button>
-        <p>Tee Time Set For</p>
-      {date ? <p>{date.slice(1, 11)} @ {time ? time : "Pick a time"}</p> : <p>Pick a date an time...</p>}
-      </div>
-      <div className="calender-container">
-        <Calendar onChange={changeDate}/>
-      </div>
+        </div>
+        <div className="calender-container">
+          <Calendar onChange={changeDate}/>
+        </div>
       <br/>
     </div>
   )

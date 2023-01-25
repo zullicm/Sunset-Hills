@@ -43,17 +43,7 @@ body{
 
 /* HomePage */
 .homepage{
-  /* background-color: rgba(255, 255, 255, 0.700);
-  border-color: #aed581;
-  border-style: inset;
-  margin: auto;
   width: 75vw;
-  margin-top: 5vh;
-  padding: 1%;
-  border-radius: 10px;
-  height: 85vh; */
-  
-    width: 75vw;
   height: 85vh;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.700);
@@ -89,6 +79,22 @@ body{
 
 .course-home{
   width: 33vw;
+}
+
+.home-text>p{
+  margin: 0%;
+}
+
+.home-text>button{
+  padding: 10px 30px;
+  margin-top: 1%;
+  color: white;
+  background-color: green;
+}
+
+.home-text>button:hover{
+  filter: brightness(200%);
+  color: black;
 }
 
 /* NavBar */
@@ -154,7 +160,8 @@ body{
   transform: rotate(90deg);
   height: 50vh;
   width: 33vw;
-  border: black;
+  border: #aed581;
+  border-width: 3px;
   border-radius: 15px;
   border-style: inset;
   float: left;
@@ -175,11 +182,14 @@ body{
   float: right;
 }
 
-.time-picker{
-  width: 9%;
-  float: right;
-  margin-right: 17%;
-  margin-top: 0%;
+.dropdowns{
+  border: black;
+  border-style: inset;
+  border-radius: 3px;
+  border-width: 1px;
+}
+.dropdowns:hover{
+  filter: brightness(75%);
 }
 
 .reservation-form{
@@ -189,11 +199,136 @@ body{
   padding-left: 3%;
 }
 
-.reserve-button{
-  border: white;
-  padding: 5px;
-  margin: 5px;
+.reserve-info{
+  margin: 5%;
+  background-color: green;
+  color: white;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin: 0px;
+  border-radius: 5px;
+  border-color: white;
+  border-style: inset;
 }
+
+.reserve-info>p{
+  margin: 0px;
+}
+
+.reserve-button{
+  padding: 10px;
+  margin: 5px;
+  margin-top: 10%;
+}
+
+.reserve-button:hover{
+  filter: brightness(75%);
+}
+
+/* Instructor Page */
+
+.instructor-page{
+  width: 75vw;
+  height: 85vh;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.700);
+  border-color: #aed581;
+  border-style: inset;
+  border-radius: 10px;
+  margin-top: 4vh;
+}
+
+.instructor-name{
+  float: left;
+  width: 33%;
+}
+
+.course-image-container{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.instructor-page-img{
+  background-color: white;
+  height: 68vh;
+  border: #aed581;
+  border-width: 3px;
+  border-radius: 15px;
+  border-style: inset;
+  float: left;
+  margin-top: 5.1%;
+  margin-left: 4%;
+  max-width: 39%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+
+.instructor-page-img>img{
+flex-shrink: 1000;
+min-width: 100%;
+min-height: 100%;
+}
+
+
+.instructor-page-info{
+  text-align: left;
+  width: 55%;
+  float: right;
+  padding: 2%;
+  padding-right: 5%;
+}
+
+
+
+.dropdowns{
+  border: black;
+  border-style: inset;
+  border-radius: 3px;
+  border-width: 1px;
+}
+.dropdowns:hover{
+  filter: brightness(75%);
+}
+
+.reservation-inst-form{
+  width: 20%;
+  margin: auto;
+  float: right;
+  padding-right: 3%;
+  margin-right: 2.5%;
+}
+
+.reserve-info{
+  margin: 5%;
+  background-color: green;
+  color: white;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin: 0px;
+  border-radius: 5px;
+  border-color: white;
+  border-style: inset;
+}
+
+.reserve-info>p{
+  margin: 0px;
+}
+
+.reserve-button{
+  padding: 10px;
+  margin: 5px;
+  margin-top: 10%;
+}
+
+.reserve-button:hover{
+  filter: brightness(75%);
+}
+
+
+
 
 /* Login/Logout */
 
@@ -280,4 +415,11 @@ body{
   padding: 2%;
   float: right;
 }
+
+.inst-reserve:hover{
+  filter: brightness(150%);
+}
+
 /* END */
+
+

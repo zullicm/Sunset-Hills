@@ -31,14 +31,13 @@ function Home(){
     <div className="homepage">
       <img className="SH-Logo"src={Logo}/> 
       <div>
-        Need some help on your golf game?
-        <br/>
-        Make a reservation with one of our clubhouse pros
-        <br/>
-        <br/>
-        <button onClick={toInstructorsPage}>Instructors</button>
-        <h4>Pick a course</h4>
-      {courses.map(course => <div onClick={e => toCoursePage(course)} key={course.id} className="course-name"><h5>{course.name}</h5><img className="course-home-img" src={course.image}/></div>)}
+        <div className="home-text">
+          <p>Need help with your golf game???</p>
+          <p>Make a reservations with one of our decorated Instructors!</p>
+          <button onClick={toInstructorsPage}>Instructors</button>
+        </div>
+        <h4>Our Course's</h4>
+      {courses.map(course => <div key={course.id} className="course-name"><h5>{course.name}</h5><img onClick={e => toCoursePage(course)} className="course-home-img" src={course.image}/></div>)}
       </div>
     </div>
   )
