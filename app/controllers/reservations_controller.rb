@@ -1,8 +1,10 @@
 class ReservationsController < ApplicationController
 
-  def
+  skip_before_action :authorized, only: :index
+
+  def index
     reservations = Reservation.all
-    render json: reservation, status: :ok
+    render json: reservations, include: ['user', 'course', 'instructor']
   end
 
   def create

@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext}from "react";
 import { UserContext } from "../Context/user";
 import { ReservationsContext } from "../Context/reservations";
 import { useNavigate } from "react-router-dom";
+import ReservationsCard from "../Components/ReservationCard";
 
 function UserPage(){
   const {user, setUser} = useContext(UserContext)
@@ -20,12 +21,11 @@ function UserPage(){
     history("/login")
   }
 
+  const userReservations = reservations.filter(reserve => reserve.user.id === user.id)
   return(
     <div className="user-page">
-      <h1>
-        {user.full_name}
-      </h1>
       <button onClick={handleLogout}> Sign Out</button>
+      {userReservations.map(reserve => <ReservationsCard key={reserve.id} reserveation={reserve} />)}
     </div>
   )
 }
