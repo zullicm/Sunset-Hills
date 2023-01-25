@@ -41,40 +41,26 @@ body{
   }
 }
 
-
-.logo{
-  padding-left: 2%;
-}
-
-.navuser{
-  padding-right: 2%;
-}
-
-.login-form{
-  background-color: rgba(255, 255, 255, 0.86);
+/* HomePage */
+.homepage{
+  /* background-color: rgba(255, 255, 255, 0.700);
   border-color: #aed581;
   border-style: inset;
-  border-width: 2px;
-  width: 50vw;
-  margin: auto;
-  margin-top: 10vh;
-  border-radius: 8px;
-}
-
-.login{
-  padding-top: 3vh;
-  width: 50%;
-  margin: auto;
-}
-
-.homepage{
-  background-color: rgba(255, 255, 255, 0.700);
   margin: auto;
   width: 75vw;
   margin-top: 5vh;
   padding: 1%;
   border-radius: 10px;
+  height: 85vh; */
+  
+    width: 75vw;
   height: 85vh;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.700);
+  border-color: #aed581;
+  border-style: inset;
+  border-radius: 10px;
+  margin-top: 4vh;
 }
 
 .SH-Logo{
@@ -84,6 +70,34 @@ body{
   margin: 2%;
   border-color: black;
   border-style: groove;
+}
+
+.course-home-img{
+  height: 275px;
+  width: 275px;
+  border-radius: 160px;
+  margin: 2%;
+  border-color: black;
+  border-style: groove;
+  background-color: white;
+  filter: brightness(20%);
+}
+
+.course-home-img:hover {
+  filter: brightness(100%);
+}
+
+.course-home{
+  width: 33vw;
+}
+
+/* NavBar */
+.navuser{
+  padding-right: 2%;
+}
+
+.logo{
+  padding-left: 2%;
 }
 
 .nav-logo{
@@ -98,44 +112,41 @@ body{
   border-width: 1px;
 }
 
-.course-home-img{
-  height: 275px;
-  width: 275px;
-  border-radius: 160px;
-  margin: 2%;
-  border-color: black;
-  border-style: groove;
-  background-color: white;
-  filter: brightness(20%);
+/* UserPage */
 
+.user-page{
+  width: 75vw;
+  height: 85vh;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.700);
+  border-color: #aed581;
+  border-style: inset;
+  border-radius: 10px;
+  margin-top: 4vh;
 }
 
-.course-home-img:hover {
-  filter: brightness(100%);
-}
-
-.course-name{
-    float: left;
-    width: 33%;
-}
-
-.course-home{
-  width: 33vw;
-}
-
-.course-image-container{
-  position: relative;
-  text-align: center;
-  color: white;
-}
+/* CoursePage */
 
 .course-page{
   width: 75vw;
   height: 85vh;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.700);
+  border-color: #aed581;
+  border-style: inset;
   border-radius: 10px;
   margin-top: 4vh;
+}
+
+.course-name{
+  float: left;
+  width: 33%;
+}
+
+.course-image-container{
+  position: relative;
+  text-align: center;
+  color: white;
 }
 
 .course-page-img{
@@ -155,12 +166,12 @@ body{
   width: 55%;
   float: right;
   padding: 2%;
+  padding-right: 5%;
 }
 
 .calender-container{
-  width: 40%;
+  padding-right: 4vw;
   height: 30%;
-  margin-right: 9.7vw;
   float: right;
 }
 
@@ -171,29 +182,49 @@ body{
   margin-top: 0%;
 }
 
-.user-calender{
-  background-color: white;
+.reservation-form{
+  width: 20%;
+  margin: auto;
+  float: left;
+  padding-left: 3%;
+}
+
+.reserve-button{
+  border: white;
+  padding: 5px;
+  margin: 5px;
+}
+
+/* Login/Logout */
+
+.login-form{
+  background-color: rgba(255, 255, 255, 0.86);
+  border-color: #aed581;
+  border-style: inset;
+  border-width: 2px;
+  width: 50vw;
+  margin: auto;
+  margin-top: 10vh;
+  border-radius: 8px;
+}
+
+.login{
+  padding-top: 3vh;
+  width: 50%;
   margin: auto;
 }
 
-.calen{
-  margin: auto;
-
-}
+/* Instructors Page */
 
 .instructors-page{
   width: 75vw;
   height: 85vh;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.700);
+  border-color: #aed581;
+  border-style: inset;
   border-radius: 10px;
   margin-top: 4vh;
-}
-
-.headshot-container{
-  position: relative;
-  width: 50%;
-  float: left;
 }
 
 .instructor-name{
@@ -210,4 +241,43 @@ body{
   background-color: white;
   border-style: outset;
   border-color: black;
+  border-right: #ffffff;
+  float: left;
+  border-radius: 5px;
+  border-width: 2px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
+
+.instructor-card{
+  width: 50%;
+  height: 26vh;
+  padding: 5%;
+  margin-bottom: 10%;
+  margin-top: 0px;
+  float: left;
+}
+
+.instructor-info{
+  padding: 5%;
+  text-align: left;
+  margin: auto;
+  margin-left: 30%;
+  height: 25vh;
+  background-color: white;
+  border: black;
+  border-style: outset;
+  border-radius: 5px;
+  border-width: 2px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.inst-reserve{
+  border-width: 1px;
+  border-radius: 25px;
+  background-color: green;
+  color: white;
+  padding: 2%;
+  float: right;
+}
+/* END */

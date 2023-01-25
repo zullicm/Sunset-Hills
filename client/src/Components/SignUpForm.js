@@ -1,4 +1,5 @@
-import React, { useState }from "react";
+import React, { useState, useContext }from "react";
+import { UserContext } from "../Context/user";
 
 function SignUpForm(){
   const [name, setName] = useState("")
@@ -6,6 +7,7 @@ function SignUpForm(){
   const [password, setPassword] = useState("")
   const [passwordConfirmation, setPasswordConfirmation] = useState("")
   const [show, setShow] = useState("password")
+  const {user, setUser} = useContext(UserContext)
 
   function showPass(){
     if(show === "password"){
@@ -17,20 +19,20 @@ function SignUpForm(){
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/api/signup", {
+    fetch("http://localhost:3000/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name,
+        full_name: name,
         email,
         password,
         password_confirmation: passwordConfirmation,
       }),
     })
       .then(r => r.json())
-      .then(data => console.log(data));
+      .then(data => setUser(data));
   }
 
 

@@ -5,10 +5,15 @@ function Instructors(){
   const [instructors, setInstructors] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:3000/instructors")
+    fetch("/instructors")
     .then(res => res.json())
-    .then(data => setInstructors(data))
+    .then(data => setInstructorsFilter(data))
   }, [])
+
+  function setInstructorsFilter(data){
+    const trainers = data.filter(trainer => trainer.id !== 5)
+    setInstructors(trainers)
+  }
 
 console.log(instructors)
 

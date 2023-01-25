@@ -12,6 +12,8 @@ Course.create(name: "Snake", difficulty: "Experienced", image: "https://www.well
 #Course C - Gator
 Course.create(name: "Gator", difficulty: "Pro", image: "https://golf.com/wp-content/uploads/2020/09/winged-foot-course-map-4-1024x576.jpg", about: "The final boss of courses, the Gator course. Here you must exihbit mastery in all assests of your golf game. Multiple sand traps and killer greens will have you wishing you gave yourself more of a handicap. The players daring enough to take on this course should be more than just expirenced at the game of golf, but gifted, and willing to put in the hard work to complete this course.")
 
+Course.create(name: "INSTRUCTOR", difficulty: "INSTRUCTOR", image: "INSTRUCTOR", about: "This is a placholder for reservations made with instructors")
+
 puts "Courses Seeded!"
 
 puts "Seeding Instructors..."
@@ -26,5 +28,7 @@ Instructor.create(name: "Phil Mickelson", about:"With the nickname 'Lefty' Phil 
 Instructor.create(name: "Rory McIlroy", about:"Coming over from the other side of the Atlantic, Rory believes in his ability to help any top ranked player, score better and more consistetly.", difficulty: "Pro", price: 450, image_1: "https://pga-tour-res.cloudinary.com/image/upload/c_fill,d_headshots_default.png,dpr_3.0,f_auto,g_face:center,h_350,q_auto,w_280/headshots_28237.png", image_2: "https://nypost.com/wp-content/uploads/sites/2/2022/06/rory-mcilroy-4.jpg")
 
 Instructor.create(name: "Rickie Fowler", about:"Although not as storied, a still skillfull Rickey is ready to help beginners and expiernced player alike up their golf game.", difficulty: "Beginner / Intermediate", price: 350, image_1: "https://pga-tour-res.cloudinary.com/image/upload/c_fill,d_headshots_default.png,dpr_3.0,f_auto,g_face:center,h_350,q_auto,w_280/headshots_32102.png", image_2: "https://www.gannett-cdn.com/authoring/2012/05/13/NFTU/ghows-LK-cddb2ecb-98ee-42c0-942b-ef1a877db277-fe7f65b1.jpeg?width=1200&disable=upscale&format=pjpg&auto=webp")
+
+Instructor.create(name: "GOLF", about: "This is a placholder for reservations made not with instructors", difficulty: "GOLF", price: 0, image_1: "GOLF", image_2: "GOLF")
 
 puts "Instructors seeded!"

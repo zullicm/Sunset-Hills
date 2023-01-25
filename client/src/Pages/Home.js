@@ -8,22 +8,24 @@ function Home(){
   const {course, setCourse} = useContext(CourseContext)
   const history = useNavigate()
   
+  useEffect(() => {
+    fetch("/courses")
+    .then(res => res.json())
+    .then(data => setCoursesFilter(data))
+  }, [])
+
   function toCoursePage(e){
     setCourse(e)
     history("/course")
   }
+  function setCoursesFilter(data){
+    const courses = data.filter(course => course.id !== 4)
+    setCourses(courses)
+  }
 
-  useEffect(() => {
-    fetch("/courses")
-    .then(res => res.json())
-    .then(data => setCourses(data))
-  }, [])
-  
   function toInstructorsPage(){
     history("/instructors")
   }
-
-  console.log(courses)
 
   return(
     <div className="homepage">
@@ -37,7 +39,6 @@ function Home(){
         <button onClick={toInstructorsPage}>Instructors</button>
         <h4>Pick a course</h4>
       {courses.map(course => <div onClick={e => toCoursePage(course)} key={course.id} className="course-name"><h5>{course.name}</h5><img className="course-home-img" src={course.image}/></div>)}
-
       </div>
     </div>
   )

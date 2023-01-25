@@ -35,7 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_20_001008) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.string "type"
+    t.boolean "golf"
     t.integer "player_num"
     t.string "time"
     t.bigint "course_id", null: false

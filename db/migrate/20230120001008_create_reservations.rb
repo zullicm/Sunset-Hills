@@ -1,7 +1,7 @@
 class CreateReservations < ActiveRecord::Migration[7.0]
   def change
     create_table :reservations do |t|
-      t.string :type
+      t.boolean :golf
       t.integer :player_num
       t.string :time
       t.belongs_to :course, null: false, foreign_key: true

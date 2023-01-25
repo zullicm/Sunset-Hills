@@ -13,9 +13,13 @@ function InstructorCard({ trainer }){
   }
 
   return(
-    <div onClick={toInstructorPage} className="headshot-container">
-      <img className="instructor-headshot" src={trainer.image_1} />
-      <div className="instructor-name">{trainer.name}</div>
+    <div className="instructor-card">
+      <img className="instructor-headshot z-depth-5" src={trainer.image_1} />
+      <div className="instructor-info z-depth-5">
+        <button onClick={toInstructorPage} className="inst-reserve">Make a Reservation</button>
+        <h5><u>{trainer.name}</u></h5>
+        <p>{trainer.about}</p>
+      </div>
     </div>
   )
 }
