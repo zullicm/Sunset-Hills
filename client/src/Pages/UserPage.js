@@ -1,12 +1,14 @@
 import React, {useState, useEffect, useContext}from "react";
 import { UserContext } from "../Context/user";
+import { ReservationsContext } from "../Context/reservations";
 import { useNavigate } from "react-router-dom";
 
 function UserPage(){
   const {user, setUser} = useContext(UserContext)
+  const {reservations, setReservations} = useContext(ReservationsContext)
   const history = useNavigate()
 
-
+  console.log(reservations)
   function handleLogout(){
     fetch("/logout",{
       method: "DELETE"

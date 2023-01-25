@@ -1,5 +1,10 @@
 class ReservationsController < ApplicationController
 
+  def
+    reservations = Reservation.all
+    render json: reservation, status: :ok
+  end
+
   def create
     reservation = Reservation.create(reservation_params)
     render json: reservation, status: :created
