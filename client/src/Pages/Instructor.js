@@ -36,6 +36,7 @@ function Instructor(){
         body:JSON.stringify({
           golf: false,
           player_num: 1,
+          cost: instructor.price,
           time: `${datetime}${timedate + 12}:00:00.000Z`,
           course_id: 4,
           instructor_id: instructor.id,
@@ -52,6 +53,7 @@ function Instructor(){
         body:JSON.stringify({
           golf: false,
           player_num: 1,
+          cost: instructor.price,
           time: `${datetime}0${timedate}:00:00.000Z`,
           course_id: 4,
           instructor_id: instructor.id,

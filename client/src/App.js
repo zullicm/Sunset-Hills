@@ -14,6 +14,7 @@ import { CourseProvider } from './Context/course';
 import { InstructorProvider } from './Context/instructor';
 import { UserContext } from './Context/user';
 import { ReservationsProvider } from './Context/reservations';
+import { UserReservationsProvider } from './Context/userReservations';
 
 function App() {
   const {user, setUser} = useContext(UserContext)
@@ -36,6 +37,7 @@ function App() {
         <CourseProvider>
           <InstructorProvider>
             <ReservationsProvider>
+              <UserReservationsProvider>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path='/userpage' element={<UserPage/>} />
@@ -45,6 +47,7 @@ function App() {
           <Route exact path='/instructors' element={<Instructors/>} />
           <Route exact path='/instructor' element={<Instructor/>} />
         </Routes>
+              </UserReservationsProvider>
             </ReservationsProvider>
           </InstructorProvider>
         </CourseProvider>    

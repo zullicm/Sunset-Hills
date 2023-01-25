@@ -15,7 +15,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.permit(:golf, :player_num, :time, :course_id, :instructor_id, :user_id, :reservation)
+    params.permit(:golf, :player_num, :cost, :time, :course_id, :instructor_id, :user_id, :reservation)
   end
 
 end

@@ -10,7 +10,9 @@ function Course(){
   const [date, setDate] = useState(null)
   const [time, setTime] = useState(null)
   const [playerNum, setPlayerNum] = useState(null)
-  
+  const [cost, setCost] = useState(0)
+  console.log(cost)
+  console.log(playerNum)
   function changeDate(data){
     setDate(JSON.stringify(data))
   }
@@ -19,7 +21,8 @@ function Course(){
   const players = [1, 2, 3, 4]
 
   function setPlayers(e){
-    setPlayerNum(e.target.value)
+    setPlayerNum(parseInt(e.target.value))
+    setCost(parseInt(e.target.value) * 40)
   }
   function setDateTime(e){
     setTime(e.target.value)
@@ -36,6 +39,7 @@ function Course(){
         body:JSON.stringify({
           golf: true,
           player_num: playerNum,
+          cost: cost,
           time: `${datetime}${timedate + 12}:00:00.000Z`,
           course_id: course.id,
           instructor_id: 5,
@@ -52,6 +56,7 @@ function Course(){
         body:JSON.stringify({
           golf: true,
           player_num: playerNum,
+          cost: cost,
           time: `${datetime}0${timedate}:00:00.000Z`,
           course_id: course.id,
           instructor_id: 5,
@@ -87,6 +92,7 @@ function Course(){
           <p><b><u>Reservation Info:</u></b></p>
           {date ? <p>{date.slice(1, 11)} @ {time ? time : "Pick a time"}</p> : <p>Pick a date and time...</p>}
           {playerNum ? <p>For {playerNum} Golfer{playerNum > 1 ? "s" : null}</p>: <p>Please pick a number of golfers</p>}
+          <p>Cost: ${cost}</p>
         </div>
         <button className="reserve-button"onClick={submitReservation}>Make Reservation</button>
         </div>

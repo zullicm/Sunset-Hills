@@ -38,6 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_20_001008) do
     t.boolean "golf"
     t.integer "player_num"
     t.string "time"
+    t.integer "cost"
     t.bigint "course_id", null: false
     t.bigint "instructor_id", null: false
     t.bigint "user_id", null: false

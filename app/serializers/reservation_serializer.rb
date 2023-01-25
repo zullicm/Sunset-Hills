@@ -1,5 +1,5 @@
 class ReservationSerializer < ActiveModel::Serializer
-  attributes :id, :golf, :player_num, :time, :about, :instructor_id, :user_id, :course_id
+  attributes :id, :golf, :player_num, :time, :cost, :instructor_id, :user_id, :course_id
 
   has_one :user
   has_one :course
