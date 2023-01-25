@@ -32,8 +32,7 @@ function Home(){
       <img className="SH-Logo"src={Logo}/> 
       <div>
         <div className="home-text">
-          <p>Need help with your golf game???</p>
-          <p>Make a reservations with one of our decorated Instructors!</p>
+          <p><b><i>Need help with your golf game???</i></b> <br/>Make a reservation with one of our <b>decorated</b> <u>Instructors!</u></p>
           <button onClick={toInstructorsPage}>Instructors</button>
         </div>
         <h4>Our Course's</h4>

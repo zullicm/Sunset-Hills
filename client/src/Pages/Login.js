@@ -11,8 +11,7 @@ function Login(){
 
   return(
     <div>
-      <button onClick={changeForm}>change form</button>
-      {form ? <LoginForm /> : <SignUpForm />}
+      {form ? <LoginForm setForm={setForm}/> : <SignUpForm setForm={setForm}/>}
     </div>
   )
 }

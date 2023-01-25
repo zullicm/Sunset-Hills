@@ -30,14 +30,3 @@ function UserPage(){
 
 export default UserPage
 
-
-//  function logoutUser(){
-//      fetch("/logout", 
-//      { method: "DELETE" 
-//    }).then((r) => {
-//        if (r.ok) {
-//          setCurrentUser(null) <----- set current user back to null
-//        }
-//      });
-//      pushLogin() <---- use Nav to push back to login page
-//    }

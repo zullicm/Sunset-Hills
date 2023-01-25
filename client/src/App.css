@@ -54,12 +54,13 @@ body{
 }
 
 .SH-Logo{
-  height: 150px;
-  width: 150px;
+  height: 170px;
+  width: 170px;
   border-radius: 15px;
-  margin: 2%;
-  border-color: black;
+  margin-top: 2%;
+  border-color: rgb(255, 251, 0);
   border-style: groove;
+  border-width: 3px;
 }
 
 .course-home-img{
@@ -82,7 +83,14 @@ body{
 }
 
 .home-text>p{
-  margin: 0%;
+  background-color: green;
+  color: white;
+  border-color: white;
+  border-style: inset;
+  width: 20%;
+  margin: auto;
+  margin-top: 10px;
+  padding: .5% 0%;
 }
 
 .home-text>button{
@@ -90,6 +98,8 @@ body{
   margin-top: 1%;
   color: white;
   background-color: green;
+  border-radius: 3px;
+  border-width: 1px;
 }
 
 .home-text>button:hover{
@@ -337,6 +347,7 @@ min-height: 100%;
   border-color: #aed581;
   border-style: inset;
   border-width: 2px;
+  height: 54vh;
   width: 50vw;
   margin: auto;
   margin-top: 10vh;
@@ -347,6 +358,72 @@ min-height: 100%;
   padding-top: 3vh;
   width: 50%;
   margin: auto;
+}
+
+
+.signup-form{
+  background-color: rgba(255, 255, 255, 0.86);
+  border-color: #aed581;
+  border-style: inset;
+  border-width: 2px;
+  height: 69vh;
+  width: 50vw;
+  margin: auto;
+  margin-top: 10vh;
+  border-radius: 8px;
+}
+.signup{
+  padding-top: 3vh;
+  width: 50%;
+  margin: auto;
+}
+
+.show-pass{
+  border-color: rgba(165, 4, 4, 0);
+  border-width: 2px;
+  border-style: outset;
+  border-radius: 2px;
+  padding: 2% 3%;
+  color: white;
+  width: 50%;
+  background-color: rgb(165, 4, 4);
+  margin: 5%;
+}
+.show-pass:hover{
+  filter: brightness(120%);
+  border-color: rgb(0, 0, 0);
+}
+
+.login-signup{
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 2px;
+  border-style: inset;
+  border-radius: 2px;
+  padding: 2% 3%;
+  color: white;
+  background-color: rgb(1, 141, 255);
+  width: 50%;
+}
+
+.login-signup:hover{
+  filter: brightness(120%);
+  border-color: rgb(0, 0, 0);
+}
+
+.switch-form{
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 2px;
+  border-style: inset;
+  border-radius: 2px;
+  padding: 2% 3%;
+  color: rgb(0, 0, 0);
+  background-color: rgba(41, 204, 0, 0.747);
+  width: 40%;
+}
+
+.switch-form:hover{
+  filter: brightness(120%);
+  border-color: rgb(0, 0, 0);
 }
 
 /* Instructors Page */

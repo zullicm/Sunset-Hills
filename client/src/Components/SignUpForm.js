@@ -1,13 +1,17 @@
 import React, { useState, useContext }from "react";
 import { UserContext } from "../Context/user";
+import { useNavigate } from "react-router-dom";
 
-function SignUpForm(){
+
+function SignUpForm({setForm}){
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [passwordConfirmation, setPasswordConfirmation] = useState("")
   const [show, setShow] = useState("password")
   const {user, setUser} = useContext(UserContext)
+  const history = useNavigate()
+
 
   function showPass(){
     if(show === "password"){
@@ -15,6 +19,11 @@ function SignUpForm(){
     }else{
       setShow("password")
     }
+  }
+
+  function setCurrentUser(data){
+    setUser(data)
+    history('/userpage')
   }
 
   function handleSubmit(e) {
@@ -32,14 +41,15 @@ function SignUpForm(){
       }),
     })
       .then(r => r.json())
-      .then(data => setUser(data));
+      .then(data => setCurrentUser(data));
   }
 
 
   return(
-    <div className="login-form">
-      <div className="login">
+    <div className="signup-form">
       <h5>Sign Up</h5>
+
+      <div className="signup">
         <form>
       <input 
           id="name" 
@@ -73,15 +83,13 @@ function SignUpForm(){
       <label className="left">Confirm Password</label>
       <br/>
       <br/>
+      <button className="show-pass z-depth-3" onClick={showPass}>SHOW PASSWORD?</button>
       <br/>
-      <a className="red waves-effect waves-light btn-small" onClick={showPass}>Show Password</a>
-      <br/>
-      <br/>
-      <a className="blue waves-effect waves-light btn-large" onClick={e => handleSubmit(e)}>Create Account</a>
-      <br/>
-      <br/>
+      <button className="login-signup z-depth-3" onClick={e => handleSubmit(e)}>SIGN UP</button>
       </form>
       </div>
+      <p><b><u>Already have an account?</u></b></p>
+      <button onClick={()=> setForm(true)} className="switch-form">LOGIN</button>
     </div>
   )
 }
