@@ -162,8 +162,9 @@ body{
 
 .user-page{
   width: 75vw;
-  height: 85vh;
+  min-height: 100vh;
   margin: auto;
+  margin-bottom: 5%;
   background-color: rgba(255, 255, 255, 0.700);
   border-color: #aed581;
   border-style: inset;
@@ -171,9 +172,62 @@ body{
   margin-top: 4vh;
 }
 
-.reserve-card{
-  
+.reserve-card-golf{
+  background-image: url(https://media.istockphoto.com/id/1225609011/vector/golf-ball-illustration-in-a-white-background-for-assembly-or-creates-teaching-material-for.jpg?s=612x612&w=0&k=20&c=l-xFMSxLBvwppJzeXuPwm0d_oMJOc6-ishg-CJFqzZo=);
+  background-position: 50% 48.6%;
+  border-radius: 300px;
+  color: rgb(0, 0, 0);
+  border-color: rgb(131, 131, 131);
+  border-style: inset;
+  text-align: center;
+  padding: 2% 1%;
+  float: left;
+  margin: 3% 2.5%;
+  margin-bottom: 0%;
+  width: 20%;
+  height: 37%;
 }
+
+.reserve-card-golf>p{
+  margin: 3%;
+}
+
+.reserve-card-inst{
+  background-image: url(https://media.istockphoto.com/id/1225609011/vector/golf-ball-illustration-in-a-white-background-for-assembly-or-creates-teaching-material-for.jpg?s=612x612&w=0&k=20&c=l-xFMSxLBvwppJzeXuPwm0d_oMJOc6-ishg-CJFqzZo=);
+  background-position: 50% 48.6%;
+  border-radius: 300px;
+  color: rgb(0, 0, 0);
+  border-color: rgb(131, 131, 131);
+  border-style: inset;
+  text-align: center;
+  padding: 2.5% 1%;
+  float: left;
+  margin: 3% 2.5%;
+  margin-bottom: 0%;
+  width: 20%;
+  height: 37%;
+}
+
+.reserve-card-inst>p{
+  margin: 3%;
+}
+
+.edit-delete{
+  border-color: rgba(165, 4, 4, 0);
+  border-width: 2px;
+  border-style: outset;
+  border-radius: 2px;
+  padding: 2% 3%;
+  color: white;
+  width: 50%;
+  background-color: rgb(0, 121, 30);
+}
+.edit-delete:hover{
+  filter: brightness(120%);
+  background-color: rgb(209, 0, 0);
+  border-color: rgb(0, 0, 0);
+}
+
 
 /* CoursePage */
 
@@ -362,8 +416,6 @@ min-height: 100%;
 }
 
 
-
-
 /* Login/Logout */
 
 .login-form{
@@ -521,6 +573,73 @@ min-height: 100%;
   filter: brightness(150%);
 }
 
+/* EditReservation */
+
+.edit-reservation-page{
+  width: 50vw;
+  min-height: 55vh;
+  margin: auto;
+  margin-bottom: 5%;
+  background-color: rgba(255, 255, 255, 0.700);
+  border-color: #aed581;
+  border-style: inset;
+  border-radius: 10px;
+  margin-top: 4vh;
+}
+
+.edit-reservation{
+  margin: auto;
+  width: 50%;
+}
+
+.edit-dropdowns{
+  border: black;
+  border-style: inset;
+  border-radius: 3px;
+  border-width: 1px;
+  width: 50%;
+  margin: auto;
+}
+
+.edit-dropdowns:hover{
+  filter: brightness(75%);
+}
+.star{
+  opacity: 75%;
+}
+
+.edit{
+  border-color: rgba(165, 4, 4, 0);
+  border-width: 2px;
+  border-style: outset;
+  border-radius: 2px;
+  padding: 2% 3%;
+  color: white;
+  width: 50%;
+  background-color: rgba(33, 47, 255, 0.788);
+  margin: 2%;
+}
+
+.delete{
+  border-color: rgba(165, 4, 4, 0);
+  border-width: 2px;
+  border-style: outset;
+  border-radius: 2px;
+  padding: 2% 3%;
+  color: white;
+  width: 50%;
+  background-color: rgba(219, 18, 18, 0.815);
+  margin: 2%;
+}
+
 /* END */
 
+.edit:hover{
+  filter: brightness(120%);
+  border-color: rgb(0, 0, 0);
+}
 
+.delete:hover{
+  filter: brightness(120%);
+  border-color: rgb(0, 0, 0);
+}

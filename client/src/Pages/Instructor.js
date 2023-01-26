@@ -5,6 +5,7 @@ import { ReservationsContext } from "../Context/reservations";
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import { InstructorContext } from "../Context/instructor";
+import { useNavigate } from "react-router-dom";
 
 
 function Instructor(){
@@ -12,19 +13,27 @@ function Instructor(){
   const {instructor, setInstructor} = useContext(InstructorContext)
   const {user, setUser} = useContext(UserContext)
   const {reservations, setReservations} = useContext(ReservationsContext)
+  const history = useNavigate()
   const [date, setDate] = useState(null)
   const [time, setTime] = useState(null)
+
   
   function changeDate(data){
-    setDate(JSON.stringify(data))
+    const newDate = data.toLocaleString()
+    const noTime = newDate.slice(0,-12).replaceAll(',','')  
+    setDate(noTime)
   }
-
+  
   const times = ['8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.']
 
   function setDateTime(e){
     setTime(e.target.value)
   }
   
+  function handleSubmit(data){
+    setReservations([data, ...reservations])
+    history('/userpage')
+  }
 
   function submitReservation(){
     const datetime = date.slice(1, 12)
@@ -38,14 +47,14 @@ function Instructor(){
           golf: false,
           player_num: 1,
           cost: instructor.price,
-          time: `${datetime}${timedate + 12}:00:00.000Z`,
+          time: `${datetime}${timedate + 12}`,
           course_id: 4,
           instructor_id: instructor.id,
           user_id: user.id
         })
       })
       .then(res => res.json())
-      .then(data => setReservations([data, ...reservations]))
+      .then(data => handleSubmit(data))
     }else{
       // post request if time is earlier than 1pm
       fetch(`/reservations`,{
@@ -55,14 +64,14 @@ function Instructor(){
           golf: false,
           player_num: 1,
           cost: instructor.price,
-          time: `${datetime}0${timedate}:00:00.000Z`,
+          time: `${date}${timedate >= 10 ? timedate : `0${timedate}`}`,
           course_id: 4,
           instructor_id: instructor.id,
           user_id: user.id
         })
       })
       .then(res => res.json())
-      .then(data => setReservations([data, ...reservations]))
+      .then(data => handleSubmit(data))
     }
   }
 
@@ -88,7 +97,7 @@ function Instructor(){
         <br/>
         <div className="reserve-info">
           <p><b><u>Reservation Info:</u></b></p>
-          {date ? <p>{date.slice(1, 11)} @ {time ? time : "Pick a time"}</p> : <p>Pick a date and time...</p>}
+          {date ? <p>{date} @ {time ? time : "Pick a time"}</p> : <p>Pick a date and time...</p>}
           <p>{instructor.name} Price Per Hour:</p>
           <p>${instructor.price}</p>
         </div>

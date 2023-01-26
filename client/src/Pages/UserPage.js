@@ -23,8 +23,8 @@ function UserPage(){
   const userReserves = reservations.filter(reserve => reserve.user.id === user.id)
   return(
     <div className="user-page">
-      <button onClick={handleLogout}> Sign Out</button>
-      {userReserves.map(reserve => <ReservationsCard key={reserve.id} reserveation={reserve} />)}
+      <div><h2>Welcome, {user.full_name}</h2></div>
+      {userReserves.map(reserve => <ReservationsCard key={reserve.id} reserve={reserve} />)}
     </div>
   )
 }

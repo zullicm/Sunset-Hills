@@ -15,8 +15,6 @@ function Instructors(){
     setInstructors(trainers)
   }
 
-console.log(instructors)
-
   return(
     <div className="instructors-page">
       {instructors.map(instructor => <InstructorCard key={instructor.id} trainer={instructor} />)}

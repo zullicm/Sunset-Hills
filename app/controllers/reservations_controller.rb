@@ -12,6 +12,22 @@ class ReservationsController < ApplicationController
     render json: reservation, status: :created
   end
 
+  def update
+    reservation = Reservation.find_by(id: params[:id])
+    reservation.update(reservation_params)
+    render json: reservation
+  end
+
+  def destroy
+    reservation = Reservation.find_by(id: params[:id])
+    if reservation
+      reservation.destroy
+      render json: reservation 
+    else
+      render json: { error: "Reservation not found" }, status: :not_found
+    end
+  end
+
   private
 
   def reservation_params
