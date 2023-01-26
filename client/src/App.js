@@ -4,7 +4,6 @@ import './App.css';
 import Login from './Pages/Login';
 import Home from './Pages/Home';
 import Reservations from './Pages/Reservations';
-import Signup from './Pages/Signup'
 import UserPage from './Pages/UserPage';
 import NavBar from './Components/NavBar';
 import Course from './Pages/Course';

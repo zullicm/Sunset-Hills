@@ -36,7 +36,8 @@ function Home(){
           <button onClick={toInstructorsPage}>Instructors</button>
         </div>
         <h4>Our Course's</h4>
-      {courses.map(course => <div key={course.id} className="course-name"><h5>{course.name}</h5><img onClick={e => toCoursePage(course)} className="course-home-img" src={course.image}/></div>)}
+        <br/>
+      {courses.map(course => <div key={course.id} className="course"><img onClick={e => toCoursePage(course)} className="course-home-img" src={course.image}/><h2 className="course-name">{course.name}</h2></div>)}
       </div>
     </div>
   )

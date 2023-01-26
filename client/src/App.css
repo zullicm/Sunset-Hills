@@ -44,8 +44,10 @@ body{
 /* HomePage */
 .homepage{
   width: 75vw;
-  height: 85vh;
+  min-height: 85vh;
+  max-height: 100vh;
   margin: auto;
+  margin-bottom: 2%;
   background-color: rgba(255, 255, 255, 0.700);
   border-color: #aed581;
   border-style: inset;
@@ -63,23 +65,51 @@ body{
   border-width: 3px;
 }
 
-.course-home-img{
-  height: 275px;
-  width: 275px;
-  border-radius: 160px;
-  margin: 2%;
-  border-color: black;
-  border-style: groove;
+.course{
   background-color: white;
+  height: 33vh;
+  width: 16vw;
+  border: #aed581;
+  border-radius: 300px;
+  border-style: inset;
+  margin-left: 8.9%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.course-name{
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  visibility: hidden;
+}
+
+.course:hover .course-home-img{
   filter: brightness(20%);
 }
 
-.course-home-img:hover {
+.course:hover .course-name{
+  visibility: visible;
   filter: brightness(100%);
 }
 
-.course-home{
-  width: 33vw;
+
+.course-home-img{
+  border-radius: 160px;
+  border-color: black;
+  border-style: groove;
+  background-color: white;
+}
+
+.course-home-img:hover{
+  filter: brightness(20%);
 }
 
 .home-text>p{
@@ -89,7 +119,7 @@ body{
   border-style: inset;
   width: 20%;
   margin: auto;
-  margin-top: 10px;
+  margin-top: .5%;
   padding: .5% 0%;
 }
 
@@ -158,16 +188,6 @@ body{
   margin-top: 4vh;
 }
 
-.course-name{
-  float: left;
-  width: 33%;
-}
-
-.course-image-container{
-  position: relative;
-  text-align: center;
-  color: white;
-}
 
 .course-page-img{
   background-color: white;

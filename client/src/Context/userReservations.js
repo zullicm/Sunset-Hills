@@ -3,7 +3,7 @@ const UserReservationsContext = React.createContext();
 
 
 function UserReservationsProvider({ children }) {
-  const [userReservations, setUserReservations] = useState(null)
+  const [userReservations, setUserReservations] = useState([])
 
   return (
     <UserReservationsContext.Provider value={{userReservations, setUserReservations}}>

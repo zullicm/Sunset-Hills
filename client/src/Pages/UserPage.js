@@ -9,7 +9,6 @@ function UserPage(){
   const {reservations, setReservations} = useContext(ReservationsContext)
   const history = useNavigate()
 
-  console.log(reservations)
   function handleLogout(){
     fetch("/logout",{
       method: "DELETE"
@@ -21,14 +20,15 @@ function UserPage(){
     history("/login")
   }
 
-  const userReservations = reservations.filter(reserve => reserve.user.id === user.id)
+  const userReserves = reservations.filter(reserve => reserve.user.id === user.id)
   return(
     <div className="user-page">
       <button onClick={handleLogout}> Sign Out</button>
-      {userReservations.map(reserve => <ReservationsCard key={reserve.id} reserveation={reserve} />)}
+      {userReserves.map(reserve => <ReservationsCard key={reserve.id} reserveation={reserve} />)}
     </div>
   )
 }
+
 
 export default UserPage
 

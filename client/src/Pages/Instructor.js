@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { CourseContext } from "../Context/course";
 import { UserContext } from "../Context/user";
+import { ReservationsContext } from "../Context/reservations";
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import { InstructorContext } from "../Context/instructor";
@@ -10,6 +11,7 @@ function Instructor(){
   const {course, setCourse} = useContext(CourseContext)
   const {instructor, setInstructor} = useContext(InstructorContext)
   const {user, setUser} = useContext(UserContext)
+  const {reservations, setReservations} = useContext(ReservationsContext)
   const [date, setDate] = useState(null)
   const [time, setTime] = useState(null)
   
@@ -18,7 +20,6 @@ function Instructor(){
   }
 
   const times = ['8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.']
-  const players = [1, 2, 3, 4]
 
   function setDateTime(e){
     setTime(e.target.value)
@@ -44,7 +45,7 @@ function Instructor(){
         })
       })
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => setReservations([data, ...reservations]))
     }else{
       // post request if time is earlier than 1pm
       fetch(`/reservations`,{
@@ -61,7 +62,7 @@ function Instructor(){
         })
       })
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => setReservations([data, ...reservations]))
     }
   }
 
