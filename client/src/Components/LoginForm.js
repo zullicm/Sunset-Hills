@@ -7,6 +7,7 @@ function LoginForm({setForm}){
   const [password, setPassword] = useState("")
   const [show, setShow] = useState("password")
   const {user, setUser} = useContext(UserContext)
+  const [error, setError] = useState(null)
   const history = useNavigate()
 
   function showPass(){
@@ -21,6 +22,13 @@ function LoginForm({setForm}){
     setUser(data)
     history('/userpage')
   }
+
+  function handleError(e){
+    setError(e)
+    setEmail("")
+    setPassword("")
+    setShow("password")
+  }
   
   function handleSubmit(e) {
     e.preventDefault();
@@ -34,13 +42,19 @@ function LoginForm({setForm}){
         password
       }),
     })
-      .then(r => r.json())
-      .then(data => setCurrentUser(data));
+    .then(r => {
+      if(r.ok){
+        r.json().then(data => setCurrentUser(data))
+      }else{
+        r.json().then(e => handleError(e))
+      }
+    })
   }
 
   return(
     <div className="login-form">
       <h5>Login</h5>
+      {error ? <p className="login-error"><b><i><u>{error.error}</u></i></b></p>: null}
       <div className="login">
         <form>
         <input 

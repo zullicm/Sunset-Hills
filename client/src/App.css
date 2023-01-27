@@ -228,6 +228,36 @@ body{
   border-color: rgb(0, 0, 0);
 }
 
+.logout{
+  border-color: rgba(165, 4, 4, 0);
+  border-width: 5px;
+  border-style: outset;
+  border-radius: 2px;
+  padding: 1% 1%;
+  color: white;
+  width: 10%;
+  background-color: rgb(221, 2, 2);
+}
+
+.logout:hover{
+  filter: brightness(120%);
+  background-color: rgb(209, 0, 0);
+  border-color: rgb(0, 0, 0);
+}
+
+.no-reserve{
+  margin: 5%;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  border-style: inset;
+  width: 75%;
+  margin: auto;
+  margin-top: 11%;
+  padding: 5%;
+}
+
 
 /* CoursePage */
 
@@ -310,6 +340,19 @@ body{
 }
 
 .reserve-button:hover{
+  filter: brightness(75%);
+}
+
+.reserve-button-login{
+  padding: 10px;
+  margin: 5px;
+  margin-top: 10%;
+  border: red;
+  border-width: 1px;
+  border-style: ridge;
+}
+
+.reserve-button-login:hover{
   filter: brightness(75%);
 }
 
@@ -417,13 +460,17 @@ min-height: 100%;
 
 
 /* Login/Logout */
+.login-error{
+  color: red;
+  margin-bottom: 0px;
+}
 
 .login-form{
   background-color: rgba(255, 255, 255, 0.86);
   border-color: #aed581;
   border-style: inset;
   border-width: 2px;
-  height: 54vh;
+  height: 56vh;
   width: 50vw;
   margin: auto;
   margin-top: 10vh;
@@ -436,13 +483,12 @@ min-height: 100%;
   margin: auto;
 }
 
-
 .signup-form{
   background-color: rgba(255, 255, 255, 0.86);
   border-color: #aed581;
   border-style: inset;
   border-width: 2px;
-  height: 69vh;
+  height: 75vh;
   width: 50vw;
   margin: auto;
   margin-top: 10vh;
@@ -475,10 +521,10 @@ min-height: 100%;
   border-width: 2px;
   border-style: inset;
   border-radius: 2px;
-  padding: 2% 3%;
-  color: white;
-  background-color: rgb(1, 141, 255);
-  width: 50%;
+  padding: 4% 3%;
+  color: rgb(0, 0, 0);
+  background-color: rgba(41, 204, 0, 0.747);
+  width: 75%;
 }
 
 .login-signup:hover{
@@ -491,10 +537,10 @@ min-height: 100%;
   border-width: 2px;
   border-style: inset;
   border-radius: 2px;
-  padding: 2% 3%;
+  padding: 1%; 
   color: rgb(0, 0, 0);
-  background-color: rgba(41, 204, 0, 0.747);
-  width: 40%;
+  background-color: rgb(1, 141, 255);
+  width: 30%;
 }
 
 .switch-form:hover{

@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 function EditReservation(){
 const {reservation, setReservation} = useContext(ReservationContext)
 const {reservations, setReservations} = useContext(ReservationsContext)
-const [time, setTime] = useState(parseInt(reservation.time.slice(12, 14)))
-const [date, setDate] = useState(reservation.time.slice(0, 10))
+const [time, setTime] = useState(parseInt(reservation.time.slice(-2)))
+const [date, setDate] = useState(reservation.time.slice(0, -2))
 const [course, setCourse] = useState(null)
 const [golfers, setGolfers] = useState(null)
 const history = useNavigate()
@@ -63,6 +63,7 @@ function handleEdit(e){
 }
 
 
+console.log(time)
 
 
   if(reservation.golf === true){

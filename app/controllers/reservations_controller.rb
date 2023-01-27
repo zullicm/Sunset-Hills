@@ -9,7 +9,11 @@ class ReservationsController < ApplicationController
 
   def create
     reservation = Reservation.create(reservation_params)
-    render json: reservation, status: :created
+    if reservation.valid?
+      render json: reservation, status: :created
+    else
+      render json: { errors: reservation.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def update

@@ -10,6 +10,7 @@ function SignUpForm({setForm}){
   const [passwordConfirmation, setPasswordConfirmation] = useState("")
   const [show, setShow] = useState("password")
   const {user, setUser} = useContext(UserContext)
+  const [error, setError] = useState(null)
   const history = useNavigate()
 
 
@@ -26,6 +27,15 @@ function SignUpForm({setForm}){
     history('/userpage')
   }
 
+  function handleError(e){
+    setError(e)
+    setName("")
+    setEmail("")
+    setPassword("")
+    setPasswordConfirmation("")
+    setShow("password")
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     fetch("http://localhost:3000/signup", {
@@ -40,15 +50,20 @@ function SignUpForm({setForm}){
         password_confirmation: passwordConfirmation,
       }),
     })
-      .then(r => r.json())
-      .then(data => setCurrentUser(data));
+    .then(r => {
+      if(r.ok){
+        r.json().then(data => setCurrentUser(data))
+      }else{
+        r.json().then(e => handleError(e))
+      }
+    })
   }
 
 
   return(
     <div className="signup-form">
       <h5>Sign Up</h5>
-
+      {error ? <p className="login-error"><b><i><u>{error.errors.map(error => <>{error}<br/></>)}</u></i></b></p>: null}
       <div className="signup">
         <form>
       <input 

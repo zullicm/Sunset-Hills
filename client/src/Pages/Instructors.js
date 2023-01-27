@@ -5,7 +5,7 @@ function Instructors(){
   const [instructors, setInstructors] = useState([])
 
   useEffect(() => {
-    fetch("/instructors")
+    fetch("/allinstructors")
     .then(res => res.json())
     .then(data => setInstructorsFilter(data))
   }, [])

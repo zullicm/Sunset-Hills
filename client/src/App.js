@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './Pages/Login';
 import Home from './Pages/Home';
-import Reservations from './Pages/Reservations';
 import UserPage from './Pages/UserPage';
 import NavBar from './Components/NavBar';
 import Course from './Pages/Course';
@@ -43,7 +42,6 @@ function App() {
           <Route exact path='/userpage' element={<UserPage/>} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/course" element={<Course />} />
-          <Route exact path="/reservations" element={<Reservations />} />
           <Route exact path='/instructors' element={<Instructors/>} />
           <Route exact path='/instructor' element={<Instructor/>} />
           <Route exact path='/editreservation' element={<EditReservation/>} />
