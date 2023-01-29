@@ -11,7 +11,6 @@ function Course(){
   const {course, setCourse} = useContext(CourseContext)
   const {user, setUser} = useContext(UserContext)
   const {reservations, setReservations} = useContext(ReservationsContext)
-
   const [error, setError] = useState(null)
   const [date, setDate] = useState(null)
   const [time, setTime] = useState(null)
@@ -20,7 +19,8 @@ function Course(){
   const [cost, setCost] = useState(0)
   const history = useNavigate()
   const times = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-  const todaysReservations = reservations.filter(reserve => reserve.time.slice(0,-2) === date)
+  const thisCourseReservations = reservations.filter(reserve => reserve.course_id === course.id)
+  const todaysReservations = thisCourseReservations.filter(reserve => reserve.time.slice(0,-2) === date)
   const todaysTimes = todaysReservations.map(reservation => parseInt(reservation.time.slice(-2)))
   const availableTimes = times.filter(time => !todaysTimes.includes(time))
   const players = [1, 2, 3, 4]
