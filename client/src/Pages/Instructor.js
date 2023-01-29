@@ -76,8 +76,8 @@ function Instructor(){
   }
 
   const currentDay = new Date()
-  const endDateMoment = moment(currentDay)
-  const endDate = endDateMoment.add(3, 'months')
+  const forNextMoment = moment(currentDay)
+  const forMonthMoment = moment(currentDay)
 
   return (
     <div className="instructor-page z-depth-5">
@@ -90,10 +90,10 @@ function Instructor(){
         <div className="instructor-page-img z-depth-5">
           <img className="inst-image" src={instructor.image_2} />
         </div>
-        <div className="calender-container">
+        <div className="calendar-container">
           <Calendar 
-          maxDate={endDate._d}
-          minDate={new Date()}
+          minDate={forNextMoment.add(1, 'd')._d}
+          maxDate={forMonthMoment.add(3, 'months')._d}
           calendarType="US"
           onChange={changeDate}/>
         </div>

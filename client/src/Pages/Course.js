@@ -84,8 +84,9 @@ function Course(){
   }
 
   const currentDay = new Date()
-  const endDateMoment = moment(currentDay)
-  const endDate = endDateMoment.add(3, 'months')
+  const forNextMoment = moment(currentDay)
+  const forMonthMoment = moment(currentDay)
+
   return (
     <div className="course-page z-depth-5">
       <div className="course-info">
@@ -114,10 +115,11 @@ function Course(){
         </div>
         {user ? <button className="reserve-button"onClick={submitReservation}>Make Reservation</button> : <button className="reserve-button-login" onClick={toLogin}>Please Login To Make Reservations</button>}
         </div>
-        <div className="calender-container">
+
+        <div className="calendar-container">
           <Calendar 
-          maxDate={endDate._d}
-          minDate={new Date()}
+          minDate={forNextMoment.add(1, 'd')._d}
+          maxDate={forMonthMoment.add(3, 'months')._d}
           calendarType="US"
           onChange={changeDate}/>
         </div>
