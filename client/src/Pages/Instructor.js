@@ -13,22 +13,20 @@ function Instructor(){
   const {instructor, setInstructor} = useContext(InstructorContext)
   const {user, setUser} = useContext(UserContext)
   const {reservations, setReservations} = useContext(ReservationsContext)
-
   const [date, setDate] = useState(null)
   const [time, setTime] = useState(null)
   const [ofDay, setOfDay] = useState("")
   const [error, setError] = useState(null)
-
   const history = useNavigate()
-
   const times = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-    const todaysReservations = reservations.filter(reserve => reserve.time.slice(0,-2) === date)
-    const todaysTimes = todaysReservations.map(reservation => parseInt(reservation.time.slice(-2)))
-    const availableTimes = times.filter(time => !todaysTimes.includes(time))
+  const thisInstructorReservations = reservations.filter(reserve => reserve.instructor_id === instructor.id)  
+  const todaysReservations = thisInstructorReservations.filter(reserve => reserve.time.slice(0,-2) === date)
+  const todaysTimes = todaysReservations.map(reservation => parseInt(reservation.time.slice(-2)))
+  const availableTimes = times.filter(time => !todaysTimes.includes(time))
   
   function changeDate(data){
     const newDate = data.toLocaleString()
-    const noTime = newDate.slice(0,-12).replaceAll(',','')  
+    const noTime = newDate.slice(0,-12).replaceAll(',','') 
     setDate(noTime)
   }
 
