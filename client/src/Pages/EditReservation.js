@@ -71,7 +71,7 @@ console.log(time)
       <div className="edit-reservation-page">
         <div className="edit-reservation">
         <p><b><u>Reservation Type: GOLF</u></b></p>
-        <p>Tee Time: <i>{time > 12 ? 12-time : time} {time >= 12? "p.m." : "a.m."}</i> Date: <i>{date}</i></p>
+        <p>Tee Time: <i>{time > 12 ? time - 12 : time} {time >= 12? "p.m." : "a.m."}</i> Date: <i>{date}</i></p>
         <select className="browser-default edit-dropdowns" onChange={(e) => setNewCourse(e)}>
           <option value="none">Select Course</option>
           {courses.map(course => <option key={course} value={courses.indexOf(course) + 1}>{course}</option>)}

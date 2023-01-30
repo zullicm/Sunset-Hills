@@ -31,7 +31,7 @@ function editDelete(){
         <p><b><u>Reservation Type: INSTRUCTIONAL</u></b></p>
         <p>Instructor: <i>{reserve.instructor.name}</i></p>
         <p>Date: <i>{date}</i></p>
-        <p>Tee Time: <i>{time > 12 ? 12-time : time} {time >= 12? "p.m." : "a.m."}</i></p>
+        <p>Tee Time: <i>{time > 12 ? time - 12 : time} {time >= 12? "p.m." : "a.m."}</i></p>
         <p>Payment: <i>${reserve.cost}</i></p>
         <button onClick={editDelete} className="edit-delete" >Delete</button>
       </div>

@@ -99,13 +99,15 @@ function Instructor(){
         </div>
       <div className="reservation-inst-form">
       <select className="browser-default dropdowns" onChange={(e) => setDateTime(e)}>
+
         <option value="none">Select a Time</option>
           {availableTimes.map(time => <option key={time} value={time}>{time > 12 ? time - 12 : time} {time >= 12 ? "p.m." : "a.m."}</option>)}
         </select>
+
         <br/>
         <div className="reserve-info">
           <p><b><u>Reservation Info:</u></b></p>
-          {date ? <p>{date} @ {time ? time : "Pick a time"}</p> : <p>Pick a date and time...</p>}
+           {date ? <p>{date} @ {time ? `${time > 12 ? time - 12 : time} ${ofDay}` : "Pick a time"}</p> : <p>Pick a date and time...</p>}
           <p>{instructor.name} Price Per Hour:</p>
           <p>${instructor.price}</p>
         </div>
