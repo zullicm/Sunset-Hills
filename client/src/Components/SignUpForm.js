@@ -14,7 +14,8 @@ function SignUpForm({setForm}){
   const history = useNavigate()
 
 
-  function showPass(){
+  function showPass(e){
+    e.preventDefault();
     if(show === "password"){
       setShow("text")
     }else{
@@ -25,9 +26,11 @@ function SignUpForm({setForm}){
   function setCurrentUser(data){
     setUser(data)
     history('/userpage')
+    console.log(data)
   }
 
   function handleError(e){
+    console.log(e)
     setError(e)
     setName("")
     setEmail("")
@@ -38,7 +41,7 @@ function SignUpForm({setForm}){
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/signup", {
+    fetch("/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -98,7 +101,7 @@ function SignUpForm({setForm}){
       <label className="left">Confirm Password</label>
       <br/>
       <br/>
-      <button className="show-pass z-depth-3" onClick={showPass}>SHOW PASSWORD?</button>
+      <button className="show-pass z-depth-3" onClick={e => showPass(e)}>SHOW PASSWORD?</button>
       <br/>
       <button className="login-signup z-depth-3" onClick={e => handleSubmit(e)}>SIGN UP</button>
       </form>

@@ -10,7 +10,9 @@ function LoginForm({setForm}){
   const [error, setError] = useState(null)
   const history = useNavigate()
 
-  function showPass(){
+  function showPass(e){
+    e.preventDefault();
+
     if(show === "password"){
       setShow("text")
     }else{
@@ -74,7 +76,7 @@ function LoginForm({setForm}){
       <label className="left">Password</label>
       <br/>
       <br/>
-      <button className="show-pass z-depth-3" onClick={showPass}>SHOW PASSWORD?</button>
+      <button className="show-pass z-depth-3" onClick={e => showPass(e)}>SHOW PASSWORD?</button>
       <br/>
       <button className="login-signup z-depth-3" onClick={e => handleSubmit(e)}>LOGIN</button>
       </form>

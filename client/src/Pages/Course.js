@@ -59,7 +59,6 @@ function Course(){
   function submitReservation(){
     const timeInt = parseInt(time)
     const dateTime = date ? time ? `${date}${timeInt < 10 ? `0${timeInt}` : time}` : null : null 
-    console.log(dateTime)
       fetch(`/reservations`,{
         method: "POST",
         headers: {'Content-Type':'application/json'},
