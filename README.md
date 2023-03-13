@@ -1,5 +1,18 @@
 # Sunset Hills Golf 
 
+## Current Works In Progress
+
+This section is dedicated to what I am currently working on.
+
+- adding effects to buttons to allow for a smoother user experience
+- make components fade in and out to make pages feel more modern and stlyistic
+- change some stylings for a more modern look
+- add more times to tee and trainer reservations
+- better styling for user reservation page
+- more editability in the edit/delete section of user reservations
+
+
+
 ## Description
 SunsetHillsGolf website is a project based on a golf course and country club.
 
