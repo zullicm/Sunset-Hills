@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { CourseContext } from "../Context/course";
 import { UserContext } from "../Context/user";
 import { ReservationsContext } from "../Context/reservations";
+
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import moment from 'moment'
@@ -18,12 +20,16 @@ function Course(){
   const [playerNum, setPlayerNum] = useState(null)
   const [cost, setCost] = useState(0)
   const history = useNavigate()
+
+
   const times = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
   const thisCourseReservations = reservations.filter(reserve => reserve.course_id === course.id)
   const todaysReservations = thisCourseReservations.filter(reserve => reserve.time.slice(0,-2) === date)
   const todaysTimes = todaysReservations.map(reservation => parseInt(reservation.time.slice(-2)))
   const availableTimes = times.filter(time => !todaysTimes.includes(time))
+
   const players = [1, 2, 3, 4]
+
 
   function toLogin(){
     history('/login')
