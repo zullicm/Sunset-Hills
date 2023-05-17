@@ -2,7 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './Pages/Login';
-import Home from './Pages/Home';
+import Home from './Pages/Home copy';
+import NewHome from './Pages/Home';
 import UserPage from './Pages/UserPage';
 import NavBar from './Components/NavBar';
 import Course from './Pages/Course';
@@ -39,6 +40,7 @@ function App() {
               <ReservationProvider>
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/newhome" element={<NewHome />} />
           <Route exact path='/userpage' element={<UserPage/>} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/course" element={<Course />} />

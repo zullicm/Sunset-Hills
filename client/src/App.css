@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   background-image: url(./Images/HomeBG.jpg);
 }
