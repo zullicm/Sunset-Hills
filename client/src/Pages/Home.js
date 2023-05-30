@@ -30,7 +30,9 @@ function NewHome(){
 
   function scroll(){
     const scrollLocation = document.getElementsByClassName("instructors-page")
-    scrollLocation[0].scrollIntoView({ behavior: 'smooth'})
+    // scrollLocation[0].scrollIntoView({ behavior: 'smooth'})
+    window.scrollTo({top: scrollLocation[0].getBoundingClientRect().top, left: 0, behavior: "smooth"})
+    console.log(scrollLocation[0].getBoundingClientRect().top)
   }
   
 
