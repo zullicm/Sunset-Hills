@@ -29,10 +29,10 @@ function NewHome(){
   }
 
   function scroll(){
-    const scrollLocation = document.getElementsByClassName("instructors-page")
+    const scrollLocation = document.getElementById("smooth-scroll-wrap")
     // scrollLocation[0].scrollIntoView({ behavior: 'smooth'})
-    window.scrollTo({top: scrollLocation[0].getBoundingClientRect().top, left: 0, behavior: "smooth"})
-    console.log(scrollLocation[0].getBoundingClientRect().top)
+    window.scrollTo({top: scrollLocation.getBoundingClientRect().top, left: 0, behavior: "smooth"})
+    console.log(scrollLocation.getBoundingClientRect().top)
   }
   
 
@@ -46,10 +46,12 @@ function NewHome(){
         </div>
         <h4>Our Course's</h4>
         <br/>
-      {courses.map(course => <div key={course.id} className="course"><img onClick={e => toCoursePage(course)} className="course-home-img" src={course.image}/><h2 className="course-name" onClick={e => toCoursePage(course)}>{course.name}</h2></div>)}
+          {courses.map(course => <div key={course.id} className="course"><img onClick={e => toCoursePage(course)} className="course-home-img" src={course.image}/><h2 className="course-name" onClick={e => toCoursePage(course)}>{course.name}</h2></div>)}
       </div>
     </div>
-      <Instructors />
+      <div id="smooth-scroll-wrap">
+        <Instructors />
+      </div>
     </div>
   )
 }
